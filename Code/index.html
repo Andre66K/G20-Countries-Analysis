@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Grayscale - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/projectstyles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#introduction">Introduction</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#geocharts">GeoCharts</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Comparisons</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#growth">Growth</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Individual Project 1</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">By Andrea Piolini</h2>
+                    <a class="btn btn-primary js-scroll-trigger" href="#introduction">Start Exploring</a>
+                </div>
+            </div>
+        </header>
+        <!--Introduction-->
+        <section class="projects-section bg-light" id="introduction">
+            <div class="container">
+                <div class='introduction'><h1>Introduction</h1>
+                    <div class="introduction_text">
+                        <p>This project aims to present and visualize some relevant statistics, namely the gross domestic prodcut (GDP), the military spendig, the education spending ann the healthcare spending of some of the G20 countries during the 2011-2015 time range. 
+                            The countries analized are the following: Australia, Brazil, Canada, France, Germany, Italy, Japan, South Korea, Mexixo, Turkey, the United Kingdom, and the United States. Initially, I wanted to include more countries and analyze a more recent 
+                            time range, but the education spending dataset had many missing values, and consequently I had to pick the countries based on data availability. All the datasets this project is based on come from the World Bank Open Data Catalog with the exception
+                            of the education spending dataset which was retrieved from the website of the Organisation for Economic Co-operation and Development (OECD). For more information about the data, the data cleaning process, and the author of this project please visit 
+                            the About section of this website. You can also find this project on Zenodo and Github.  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- GeoCharts-->
+        <section class="about-section text-center" id="geocharts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="text-white mb-4">GeoCharts</h1>
+                        <p class="text-white-50">The following GeoCharts display the GDP, the Military Spending, the Healthcare Spending, and the Education Spending of the selected countries between 2011 and 2015.</p>
+                        <h3 class="GDP_header">GDP</h3>
+                    </div>
+                </div>
+                <div class = "col-md-2">
+                    <form>
+                      <div class="form-group">
+                        <label style='color: white;' for="sel1" id="labelGDP">Category and Year:</label>
+                        <select class="form-control" id="Dropdown">
+                            <optgroup label="GDP">
+                                <option value="gdp2011" id="gdp2011"> GDP - 2011</option>
+                                <option value="gdp2012" id="gdp2012">GDP - 2012</option>
+                                <option value="gdp2013" id="gdp2013">GDP - 2013</option>
+                                <option value="gdp2014" id="gdp2014">GDP - 2014</option>
+                                <option value="gdp2015" id="gdp2013">GDP - 2015</option>
+                            </optgroup>
+                        </select>
+                      </div>
+                    </form>
+                </div>
+                <!--first chart viz-->
+                <div class="col-md-10" id="GDPCharts">
+                    <div id="map"></div>
+                    <div id="gdp2011_div"></div>
+                    <div id="gdp2012_div"></div>
+                    <div id="gdp2013_div"></div>
+                    <div id="gdp2014_div"></div>
+                    <div id="gdp2015_div"></div>
+                </div>
+                <div class = "col-md-2">
+                <form>
+                    <div class="form-group2">
+                        <div class='Spendings_header'>
+                            <h3>Military Spending, Education Spending & Healthcare Spending</h3>
+                        </div>
+                        <label for="sel1" id='labelSpendings' style="color: white;">Category and Year:</label>
+                        <select class="form-control" id="Dropdown2">
+                            <div id='dropdown2_content'>
+                                <optgroup label="Military Spending">
+                                    <option value="milspen2011" id="milspen2011">Military - 2011</option>
+                                    <option value="milspen2012" id="milspen2012">Military - 2012</option>
+                                    <option value="milspen2013" id="milspen2013">Military - 2013</option>
+                                    <option value="milspen2014" id="milspen2014">Military - 2014</option>
+                                    <option value="milspen2015" id="milspen2013">Military - 2015</option>
+                                </optgroup>
+                                <optgroup label="Education Spending">
+                                    <option value="edspen2011" id="edspen2011">Education - 2011</option>
+                                    <option value="edspen2012" id="edspen2012">Education - 2012</option>
+                                    <option value="edspen2013" id="edspen2013">Education - 2013</option>
+                                    <option value="edspen2014" id="edspen2014">Education - 2014</option>
+                                    <option value="edspen2015" id="edspen2013">Education - 2015</option>
+                                </optgroup>
+                                <optgroup label="Healthcare Spending">
+                                    <option value="hspen2011" id="espen2011">Healthcare - 2011</option>
+                                    <option value="hspen2012" id="hspen2012">Healthcare - 2012</option>
+                                    <option value="hspen2013" id="hspen2013">Healthcare - 2013</option>
+                                    <option value="hspen2014" id="hspen2014">Healthcare - 2014</option>
+                                    <option value="hspen2015" id="hspen2013">Healthcare - 2015</option>
+                                </optgroup>
+                            </div>
+                        </select>
+                    </div>
+                </form>
+                <!--second chart viz-->                
+                <div class="col-md-10" id='other_geocharts'>
+                    <div id="map"></div>
+                    <div id="milspen2011_div"></div>
+                    <div id="milspen2012_div"></div>
+                    <div id="milspen2013_div"></div>
+                    <div id="milspen2014_div"></div>
+                    <div id="milspen2015_div"></div>
+                    <div id="edspen2011_div"></div>
+                    <div id="edspen2012_div"></div>
+                    <div id="edspen2013_div"></div>
+                    <div id="edspen2014_div"></div>
+                    <div id="edspen2015_div"></div>
+                    <div id="hspen2011_div"></div>
+                    <div id="hspen2012_div"></div>
+                    <div id="hspen2013_div"></div>
+                    <div id="hspen2014_div"></div>
+                    <div id="hspen2015_div"></div>
+                </div>
+                <div id='geocharts_paragraph'>
+                    <p>From these charts we can clearly see that the U.S. had by far the largest GDP among the countries analized. 
+                       Moreover, the U.S. was the country that spent the largest amount of money for the Military and Education. Notably, 
+                       the U.S. was also the country that spent the largest amount of money in Healthcare, even though American healthcare 
+                       facilities are mainly owned and operated by private sector business. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Comparisons -->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container">
+                <!-- Overall Spending Comparison-->
+                <div class='comparisons_header'>
+                    <h1>Comparisons</h1>
+                </div>
+                <p class='comparison_paragraph'>The following charts display meaningful comparisons between the selected countries' GDP, Military Spending, Education Spending, and Healthcare Spending between 2011 and 2015. </p>
+                <div class="col-md-10">
+                    <div class='total_spendings_GDP'>
+                        <h2>Total Spendings and GDP (in %)</h2>
+                    </div>
+                    <form>
+                        <div class="form-group3">
+                            <label for="sel1">Country</label>
+                                <select class="form-control" id="Dropdown3">
+                                    <option value="AUS" id="AUS">Australia</option>
+                                    <option value="BRA" id="BRA">Brazil</option>
+                                    <option value="CAN" id="CAN">Canada</option>
+                                    <option value="FRA" id="FRA">France</option>
+                                    <option value="GER" id="GER">Germany</option>
+                                    <option value="ITA" id="ITA">Italy</option>
+                                    <option value="JPN" id="JPN">Japan</option>
+                                    <option value="KOR" id="KOR">South Korea</option>
+                                    <option value="MEX" id="MEX">Mexico</option>
+                                    <option value="TUR" id="TUR">Turkey</option>
+                                    <option value="UK" id="UK">United Kingdom</option>
+                                    <option value="US" id="US">United States</option>
+                                </select>
+                        </div>
+                    </form>
+                    <div class='totpercchart'>
+                        <div id="map"></div>
+                        <div id="percgdpAUS_div"></div>
+                        <div id="percgdpBRA_div"></div>
+                        <div id="percgdpCAN_div"></div>
+                        <div id="percgdpFRA_div"></div>
+                        <div id="percgdpGER_div"></div>
+                        <div id="percgdpITA_div"></div>
+                        <div id="percgdpJPN_div"></div>
+                        <div id="percgdpKOR_div"></div>
+                        <div id="percgdpMEX_div"></div>
+                        <div id="percgdpTUR_div"></div>
+                        <div id="percgdpUK_div"></div>
+                        <div id="percgdpUS_div"></div>
+                    </div>
+                </div>
+                <!-- Spending Per Capita-->
+                <div class='spending_per_capita'>
+                    <h2>Average Spendings Per Capita and GDP Per Capita</h2>
+                </div>
+                <div id='buttons'>
+                    <button class='button1' id='button1'>GDP vs Military Spending</button>
+                    <button class='button2' id='button2'>GDP vs Education Spending</button>
+                    <button class='button3' id='button3'>GDP vs Healthcare Spending</button>
+                </div>
+                <div class='percapita_buttons'>
+                    <div id="percapitagdpmil_div"></div>
+                    <div id="percapitagdped_div"></div>
+                    <div id="percapitagdphealth_div"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Growth section-->
+        <section class="about-section text-center" id='growth'>
+            <div class="container">
+                <!--Spending Growth Viz-->
+                <div class='text-white mb-4'>
+                    <h1>Education and Healthcare Spending Growth</h1>
+                </div>
+                <p style='color: white;'>The following graphs display the growth in Education and Healthcare of the selected countries between 2011 and 2015.</p>
+                <div>
+                    <div id='growthpercentage_div'></div>
+                    <div id='growthabs_div'></div>
+                </div>
+                <div class='growth_paragraph'>
+                    <p>By looking at the graphs above, we can clearly see that most of the countries had a negative growth for both Education and Healthcare between 2011 and 2015.
+                       This might be due to several factors, including internal cuts to Education and Healthcate budgets, reallocations of funds, and the fact that many of these countries
+                       had not fully recovered from the 2008 international crisis during the 2011-2015 time range. Among the countries in negative growth, the cases of Italy and Japan are
+                       striking. These two countries, which are considered developed countries and they are also part of the G7, had a serious negative growth in both Education and Healthcare, 
+                       during the timeframe analyzed. Consequently, I decided to investigate them further to see if the negative growths can be exaplained by looking at their GDP or it is 
+                       due to reasons that go beyond the scope of this project.
+                    </p>
+                </div>
+                <!-- Zooming In Viz-->
+                <div class='zooming_in'>
+                    <h2>Zooming In: The Cases of Italy and Japan</h2>
+                </div>
+                <div id='JAPITA'>
+                    <img src="italian_flag.PNG" id="Italian_flag" alt="Italian Flag"
+                    width="400" height="250">
+                    <div id="ItalyGDP_div"></div>
+                    <div id="ItalySpending_div"></div>
+                    <img src="japanese_flag.PNG" id="Japanese_flag" alt="Japanese Flag"
+                    width="400" height="250">
+                    <div id="JapGDP_div"></div>
+                    <div id="JapSpending_div"></div>
+                </div>
+                <div class='discussion_paragraph'>
+                    <p> As we can see from the graphs, the main reason for Italy and Japans' major negative growth in Education and Healthcare Spending 
+                        is the dramatical decrease of their GDP. Therefore the two countries did not perform any major cut in relation to
+                        their GDP, but their spendings decreased simply because their GDP declined. This may not be the only reason why these two countries had such a negative growth in 
+                        Education and Healthcate; however, it is the only one we could clearly identify with the data available. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!--About-->
+        <section class="signup-section" id="signup">
+            <div class="container">
+                <div class='about_header'>
+                    <h1>About</h1>
+                    <div class='about_text'>
+                        <h2>Data</h2>
+                        <p>All the datasets utilized for this project were retrieved in June 2020 from the <a href="https://data.worldbank.org/">World Bank's Open Data Catalog</a>, an open source, free, World Bank's Open Data Catalog that provides access to over 3,000 datasets and 14,000 indicators for over 150 countries in the world.
+                           The only dataset that was not retrived from there was the education spending dataset, which was retrieved from the <a href="https://data.oecd.org/eduresource/public-spending-on-education.htm">OECD website.</a>   
+                        </p>
+                        <h2>Methodology and Data Cleaning</h2>
+                        <p>The datasets were downloaded in CSV format and they were cleaned and processed using both Excel and Python.The education data contained many missing values and every country that had more than one missing value per timeframe was eliminated. If there was just one missing value per timeframe, it was filled 
+                           with the average of the four remaining data points. The education dataset was created by summing the expenditure for primary, secondary and tertiary education. All the charts and visualizations were created using the <a href="https://developers.google.com/chart/interactive/docs/reference">Google Visualization API.</a>
+                        </p>
+                        <h2>Credits</h2>
+                        <p>The website's theme is the <a href="https://startbootstrap.com/themes/grayscale/">Greyscale</a> theme developed by Start Bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About the author-->
+        <section class="contact-section bg-black">
+            <div class="container">
+                <div class='author'>
+                    <h3>About the Author</h3>
+                    <p>
+                    </p>
+                    <p>Andrea Piolini is a student in the Data Science program at The George Washington University, in Washington, DC. Andrea holds an MA in Security Studies from Georgetown University and a BA in International Relations from the University of Milan, in Milan, Italy.
+                    </p>
+                    <img src="linkedin_pic.jpg" alt="Picture of Andrea Piolini" width="200" height="200">
+                    <div class="social d-flex justify-content-center">
+                        <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- JS functions for charts-->
+            <script src="https://www.gstatic.com/charts/loader.js"></script>
+            <script>
+                google.charts.load('current', {'packages': ['corechart']});
+                google.charts.setOnLoadCallback(graphDrawer);
+        
+                function graphDrawer() {
+                    drawGraph('gdp', 'SELECT A,B', gdp2011RH);
+                    drawGraph('gdp', 'SELECT A,C', gdp2012RH);
+                    drawGraph('gdp', 'SELECT A,D', gdp2013RH);
+                    drawGraph('gdp', 'SELECT A,E', gdp2014RH);
+                    drawGraph('gdp', 'SELECT A,F', gdp2015RH);
+                    drawGraph('militaryspending', 'SELECT A,B', milspend2011RH);
+                    drawGraph('militaryspending', 'SELECT A,C', milspend2012RH);
+                    drawGraph('militaryspending', 'SELECT A,D', milspend2013RH);
+                    drawGraph('militaryspending', 'SELECT A,E', milspend2014RH);
+                    drawGraph('militaryspending', 'SELECT A,F', milspend2015RH);
+                    drawGraph('educationabs', 'SELECT A,B', edspend2011RH);
+                    drawGraph('educationabs', 'SELECT A,C', edspend2012RH);
+                    drawGraph('educationabs', 'SELECT A,D', edspend2013RH);
+                    drawGraph('educationabs', 'SELECT A,E', edspend2014RH);
+                    drawGraph('educationabs', 'SELECT A,F', edspend2015RH);
+                    drawGraph('healthcareabs', 'SELECT A,B', healthspend2011RH);
+                    drawGraph('healthcareabs', 'SELECT A,C', healthspend2012RH);
+                    drawGraph('healthcareabs', 'SELECT A,D', healthspend2013RH);
+                    drawGraph('healthcareabs', 'SELECT A,E', healthspend2014RH);
+                    drawGraph('healthcareabs', 'SELECT A,F', healthspend2015RH);
+                    drawGraph('totalspending', 'SELECT A,B', percgdpAUSRH);
+                    drawGraph('totalspending', 'SELECT A,C', percgdpBRARH);
+                    drawGraph('totalspending', 'SELECT A,D', percgdpCANRH);
+                    drawGraph('totalspending', 'SELECT A,E', percgdpFRARH);
+                    drawGraph('totalspending', 'SELECT A,F', percgdpGERRH);
+                    drawGraph('totalspending', 'SELECT A,G', percgdpITARH);
+                    drawGraph('totalspending', 'SELECT A,H', percgdpJPNRH);
+                    drawGraph('totalspending', 'SELECT A,I', percgdpKORRH);
+                    drawGraph('totalspending', 'SELECT A,J', percgdpMEXRH);
+                    drawGraph('totalspending', 'SELECT A,K', percgdpTURRH);
+                    drawGraph('totalspending', 'SELECT A,L', percgdpUKRH);
+                    drawGraph('totalspending', 'SELECT A,M', percgdpUSRH);
+                    drawGraph('percapaverage', 'SELECT A,B,C', percapgdpmilRH);
+                    drawGraph('percapaverage', 'SELECT A,B,D', percapgdpedRH);
+                    drawGraph('percapaverage', 'SELECT A,B,E', percapgdphealthRH);
+                    drawGraph('growthstats', 'SELECT A,B,C', growthpercentageRH);
+                    drawGraph('growthstats', 'SELECT A,E,F', growthabsRH);
+                    drawGraph('spotlighton', 'SELECT A,B', ItalyGDPRH);
+                    drawGraph('spotlighton', 'SELECT A,C,D', ItalySpendingRH);
+                    drawGraph('spotlighton', 'SELECT H,I', JapanGDPRH);
+                    drawGraph('spotlighton', 'SELECT H,J,K', JapanSpendingRH);
+        
+                }
+        
+                function drawGraph(Name, query, RH) {
+                    var queryStr = encodeURIComponent(query);
+                    var query = new google.visualization.Query(
+                        'https://docs.google.com/spreadsheets/d/12IjaalPgQtHvHU-7u1a4Ad9jscZKcIhH7F0dkcrUa88/gviz/tq?sheet=' 
+                        + Name + '&headers=1&tq=' + queryStr);
+                    query.send(RH);
+                }
+        
+                function gdp2011RH(response) {
+                    var data = response.getDataTable();
+        
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcfbe6', '#faf357']},
+                        backgroundColor: '#212020'
+                    };
+        
+                    var chart = new google.visualization.GeoChart(document.getElementById("gdp2011_div"));
+        
+                    chart.draw(data, options);
+                }
+        
+                function gdp2012RH(response) {
+                    var data = response.getDataTable();
+        
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcacf7', '#ad1fa5']},
+                        backgroundColor: '#212020'
+                    };
+        
+                    var chart = new google.visualization.GeoChart(document.getElementById("gdp2012_div"));
+        
+                    chart.draw(data, options);
+                
+                }
+        
+                function gdp2013RH(response) {
+                    var data = response.getDataTable();
+        
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#c2edec', '#37bfbc']},
+                        backgroundColor: '#212020'
+        
+                    };
+        
+                    var chart = new google.visualization.GeoChart(document.getElementById("gdp2013_div"));
+        
+                    chart.draw(data, options);
+                
+                }
+        
+                function gdp2014RH(response) {
+                    var data = response.getDataTable();
+        
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcb9b6', '#a31d17']},
+                        backgroundColor: '#212020'
+        
+                    };
+        
+                    var chart = new google.visualization.GeoChart(document.getElementById("gdp2014_div"));
+        
+                    chart.draw(data, options);
+                
+                }
+        
+                function gdp2015RH(response) {
+                    var data = response.getDataTable();
+        
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#bdf2b6', '#3fb32e']},
+                        backgroundColor: '#212020'
+        
+                    };
+        
+                    var chart = new google.visualization.GeoChart(document.getElementById("gdp2015_div"));
+        
+                    chart.draw(data, options);
+                
+                }
+
+                function milspend2011RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcfbe6', '#faf357']},
+                        backgroundColor: '#212020'
+
+                     };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("milspen2011_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  milspend2012RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcacf7', '#ad1fa5']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("milspen2012_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  milspend2013RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#c2edec', '#37bfbc']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("milspen2013_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  milspend2014RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcb9b6', '#a31d17']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("milspen2014_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  milspend2015RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#bdf2b6', '#3fb32e']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("milspen2015_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function edspend2011RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcfbe6', '#faf357']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("edspen2011_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  edspend2012RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcacf7', '#ad1fa5']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("edspen2012_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  edspend2013RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#c2edec', '#37bfbc']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("edspen2013_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  edspend2014RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcb9b6', '#a31d17']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("edspen2014_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  edspend2015RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#bdf2b6', '#3fb32e']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("edspen2015_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function healthspend2011RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcfbe6', '#faf357']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("hspen2011_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  healthspend2012RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcacf7', '#ad1fa5']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("hspen2012_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  healthspend2013RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#c2edec', '#37bfbc']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("hspen2013_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  healthspend2014RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#fcb9b6', '#a31d17']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("hspen2014_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  healthspend2015RH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        height: 450,
+                        width: 900,
+                        colorAxis : {colors: ['#bdf2b6', '#3fb32e']},
+                        backgroundColor: '#212020'
+
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById("hspen2015_div"));
+
+                    chart.draw(data, options);
+    
+                }
+
+                function  percgdpAUSRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bbbd5c', '#467370','#bd5cb1', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                        
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpAUS_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpBRARH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 9,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpBRA_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpCANRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpCAN_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpFRARH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpFRA_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpGERRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpGER_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpITARH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpITA_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpJPNRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpJPN_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpKORRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpKOR_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpMEXRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpMEX_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpTURRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpTUR_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpUKRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                        height: 800,
+                        width: 800,
+                        backgroundColor: '#f8f9fa',
+                        fontSize: 10,
+                        legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpUK_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function  percgdpUSRH(response) {
+                    var data = response.getDataTable();
+
+                var options = {
+                    colors: ['#bd5cb1', '#467370','#bbbd5c', '#3c4242'],
+                    height: 800,
+                    width: 800,
+                    backgroundColor: '#f8f9fa',
+                    fontSize: 10,
+                    legend: {textStyle: {color: '#212020', fontSize: 14}},
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById("percgdpUS_div"));
+
+                    chart.draw(data, options);
+                }
+
+                function percapgdpmilRH(response) {
+                    var data = response.getDataTable();
+
+                var options = {
+                    title: "GDP Per Capita vs. Military Spending Per Capita",
+                    width: 1550,
+                    height: 400,
+                    legend: {position: 'right'},
+                    colors:['#3c4242', '#bbbd5c'],
+                    backgroundColor: '#f8f9fa',
+                    vAxis: {title: 'Spending in Billion (USD)'},
+                    hAxis: {title: 'Country'},
+                };
+        
+                    var chart = new google.visualization.ColumnChart(document.getElementById('percapitagdpmil_div'));
+
+                    chart.draw(data, options);
+                }
+
+                function percapgdpedRH(response) {
+                    var data = response.getDataTable();
+
+                var options = {
+                    title: "GDP Per Capita vs. Education Spending Per Capita",
+                    width: 1550,
+                    height:400,
+                    legend: {position: 'right'}, 
+                    colors:['#3c4242', '#bd5cb1'],
+                    backgroundColor: '#f8f9fa',
+                    vAxis: {title: 'Spending in Billion (USD)'},
+                    hAxis: {title: 'Country'},
+                };
+        
+                    var chart = new google.visualization.ColumnChart(document.getElementById('percapitagdped_div'));
+
+                    chart.draw(data, options);
+                }
+
+                function percapgdphealthRH(response) {
+                    var data = response.getDataTable();
+
+                var options = {
+                    title: "GDP Per Capita vs. Healthcare Spending Per Capita",
+                    width: 1550,
+                    height: 400,
+                    legend: {position: 'right'},
+                    colors:['#3c4242', '#467370'],
+                    backgroundColor: '#f8f9fa',
+                    vAxis: {title: 'Spending in Billion(USD)'},
+                    hAxis: {title: 'Country'},
+                };
+        
+
+                    var chart = new google.visualization.ColumnChart(document.getElementById('percapitagdphealth_div'));
+
+                    chart.draw(data, options);
+                }
+
+                function growthpercentageRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        title: "Growth Rate in %",
+                        titleTextStyle:{color: '#d1d1d1'},
+                        width: 600, 
+                        height: 400, 
+                        legend: {position: 'top', textStyle: {color: '#d1d1d1'}},
+                        bar: {groupWidth: '75%'},
+                        backgroundColor: '#212020',
+                        hAxis: {title: '%', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        vAxis: {title: 'Country', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        colors:['#467370','#bd5cb1' ],
+                        bar: {groupWidth: '75%'},
+                        textStyle: {color: '#d1d1d1'}
+
+                    };
+
+                    var chart = new google.visualization.BarChart(document.getElementById('growthpercentage_div'));
+
+                    chart.draw(data, options);
+                }
+
+                function growthabsRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        title: "Growth in Fixed Value",
+                        titleTextStyle:{color: '#d1d1d1'},
+                        width: 600, 
+                        height: 400, 
+                        legend: {position: 'top', textStyle: {color: '#d1d1d1'}},
+                        bar: {groupWidth: '75%'},
+                        backgroundColor: '#212020',
+                        hAxis: {title: 'Billion (USD)', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        vAxis: {title: 'Country', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        colors:['#467370','#bd5cb1' ],
+                        bar: {groupWidth: '75%'},
+                        textStyle: {color: '#d1d1d1'}
+
+                    };
+
+                    var chart = new google.visualization.BarChart(document.getElementById('growthabs_div'));
+
+                    chart.draw(data, options);
+                }
+
+                function ItalyGDPRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        width: 600, 
+                        height: 400, 
+                        legend: {position: 'top', textStyle: {color: '#d1d1d1'}},
+                        bar: {groupWidth: '75%'},
+                        backgroundColor: '#212020',
+                        vAxis: {title: 'Billion (USD)', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        hAxis: {title: 'Year', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        colors:['#9c9454'],
+                        bar: {groupWidth: '75%'},
+                        textStyle: {color: '#d1d1d1'}
+
+                    };
+
+                    var chart = new google.visualization.LineChart(document.getElementById('ItalyGDP_div'));
+
+                    chart.draw(data, options);
+                }
+
+                function ItalySpendingRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        width: 600, 
+                        height: 400, 
+                        legend: {position: 'top', textStyle: {color: '#d1d1d1'}},
+                        bar: {groupWidth: '75%'},
+                        backgroundColor: '#212020',
+                        vAxis: {title: 'Billion (USD)', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        hAxis: {title: 'Year', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        colors:['#bd5cb1','#467370'],
+                        bar: {groupWidth: '75%'},
+                        textStyle: {color: '#d1d1d1'}
+                    };
+
+                    var chart = new google.visualization.LineChart(document.getElementById('ItalySpending_div'));
+
+                    chart.draw(data, options);
+                } 
+
+                function JapanGDPRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        width: 600, 
+                        height: 400, 
+                        legend: {position: 'top', textStyle: {color: '#d1d1d1'}},
+                        bar: {groupWidth: '75%'},
+                        backgroundColor: '#212020',
+                        vAxis: {title: 'Billion (USD)', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        hAxis: {title: 'Year', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        colors:['#9c9454'],
+                        bar: {groupWidth: '75%'},
+                        textStyle: {color: '#d1d1d1'}
+
+                    };
+
+                    var chart = new google.visualization.LineChart(document.getElementById('JapGDP_div'));
+
+                    chart.draw(data, options);
+                }
+
+                function JapanSpendingRH(response) {
+                    var data = response.getDataTable();
+
+                    var options = {
+                        width: 600, 
+                        height: 400, 
+                        legend: {position: 'top', textStyle: {color: '#d1d1d1'}},
+                        bar: {groupWidth: '75%'},
+                        backgroundColor: '#212020',
+                        vAxis: {title: 'Billion (USD)', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        hAxis: {title: 'Year', titleTextStyle:{color: '#d1d1d1'}, textStyle: {color: '#d1d1d1'}},
+                        colors:['#bd5cb1','#467370'],
+                        bar: {groupWidth: '75%'},
+                        textStyle: {color: '#d1d1d1'}
+                    };
+
+                    var chart = new google.visualization.LineChart(document.getElementById('JapSpending_div'));
+
+                    chart.draw(data, options);
+                }               
+            </script>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Andrea Piolini 2020</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!--Cutomized JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/jsfunctions.js"></script>
+    </body>
+</html>
